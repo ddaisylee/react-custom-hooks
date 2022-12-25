@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { useInput } from './hooks/useInput';
 
-function App() {
+const App = () => {
+  const validationCheck = (value) => value.length >= 10
+  const { value, isValid, handleChange } = useInput('', validationCheck)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <input placeholder='입력해주세요' value={value} onChange={handleChange} />
+      {value && (isValid || <span style={{ color: "red" }}>10자 이상 입력해주세요!</span>)}
+    </>
   );
-}
+};
 
 export default App;
