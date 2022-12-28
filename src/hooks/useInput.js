@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 export const useInput = (initialValue, validator) => {
   const [value, setValue] = useState(initialValue)
-  const [isValid, setIsValid] = useState(false);
+  const [isValid, setIsValid] = useState(false)
 
-  const handleChange = (event) => {
+  const onChange = (event) => {
     const {
-      target: { value }
+      target: { value },
     } = event
     setValue(value)
 
@@ -14,5 +14,5 @@ export const useInput = (initialValue, validator) => {
     if (validator(value)) setIsValid(true)
   }
 
-  return { value, isValid, handleChange }
+  return { value, isValid, onChange }
 }
