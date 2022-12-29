@@ -4,6 +4,7 @@ import UseInputPage from './pages/UseInputPage'
 import UseTabsPage from './pages/UseTabsPage'
 import UseTitlePage from './pages/UseTitlePage'
 import UseConfirmPage from './pages/UseConfirmPage'
+import UsePreventLeavePage from './pages/UsePreventLeavePage'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Route path="use-tabs" element={<UseTabsPage />} />
       <Route path="use-title" element={<UseTitlePage />} />
       <Route path="use-confirm" element={<UseConfirmPage />} />
+      <Route path="use-prevent-leave" element={<UsePreventLeavePage />} />
     </Routes>
   )
 }
